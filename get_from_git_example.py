@@ -1,5 +1,6 @@
 ## 
-# Example code for importing the data from a json file.
+# Example code for importing the data from a GIT repository.
+# Modify this to work in your client app!
 
 from xarray import DataArray, Dataset
 import json
@@ -29,4 +30,11 @@ x_loaded = Dataset.from_dict(dict_loaded)
 
 # Convert time from string to datetime64 if you want. 
 x_loaded['time'].values = pandas.to_datetime(x_loaded['time'].values)
+
+#########################################
+## Now example from icon_git
+# RetrieveForecast has options for conversion to xarray or datetime64
+
+import icon_git
+x_loaded = icon_git.RetrieveForecast('Gothenburg')
 
